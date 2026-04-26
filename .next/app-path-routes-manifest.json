@@ -1,0 +1,11 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/blog/page": "/blog",
+  "/contact/page": "/contact",
+  "/page": "/",
+  "/product/page": "/product",
+  "/technology/page": "/technology",
+  "/where-to-buy/page": "/where-to-buy"
+}

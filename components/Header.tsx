@@ -1,0 +1,3 @@
+import Link from 'next/link'
+const nav=[['品牌','/about'],['P-1','/product'],['技術','/technology'],['Blog','/blog'],['購買','/where-to-buy']]
+export default function Header(){return <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-carbon/80 backdrop-blur-xl"><div className="container-x flex h-16 items-center justify-between"><Link href="/" className="text-lg font-semibold tracking-[.22em]">SOU SIK</Link><nav className="hidden md:flex items-center gap-7 text-sm text-white/70">{nav.map(([n,h])=><Link key={h} href={h} className="hover:text-white">{n}</Link>)}</nav><Link href="/where-to-buy" className="rounded-full border border-white/20 px-4 py-2 text-xs hover:bg-white hover:text-black">立即購買</Link></div></header>}

@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/where-to-buy/layout,_N_T_/where-to-buy/page,_N_T_/where-to-buy"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/where-to-buy/__PAGE__",
+    "/where-to-buy",
+    "/_index",
+    "/_head"
+  ]
+}
