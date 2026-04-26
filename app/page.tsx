@@ -37,17 +37,16 @@ export default function Home() {
   return (
     <main>
       {/* Full-screen Banner */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative flex items-center justify-center bg-black overflow-hidden" style={{ height: 'min(100vh, calc(100vw / 0.777))' }}>
         {banners.map((b, i) => (
           <img
             key={i}
             src={b.src}
             alt={b.alt}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-            style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
+            className="absolute transition-opacity duration-1000"
+            style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0, maxHeight: '100vh', maxWidth: '100vw', objectFit: 'contain' }}
           />
         ))}
-        <div className="absolute inset-0 bg-black/30" />
         {/* Banner dots */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
           {banners.map((_, i) => (
