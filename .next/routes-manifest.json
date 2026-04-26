@@ -102,6 +102,48 @@
       "namedRegex": "^/en/where\\-to\\-buy(?:/)?$"
     },
     {
+      "page": "/jp",
+      "regex": "^/jp(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/jp(?:/)?$"
+    },
+    {
+      "page": "/jp/about",
+      "regex": "^/jp/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/jp/about(?:/)?$"
+    },
+    {
+      "page": "/jp/blog",
+      "regex": "^/jp/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/jp/blog(?:/)?$"
+    },
+    {
+      "page": "/jp/contact",
+      "regex": "^/jp/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/jp/contact(?:/)?$"
+    },
+    {
+      "page": "/jp/product",
+      "regex": "^/jp/product(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/jp/product(?:/)?$"
+    },
+    {
+      "page": "/jp/technology",
+      "regex": "^/jp/technology(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/jp/technology(?:/)?$"
+    },
+    {
+      "page": "/jp/where-to-buy",
+      "regex": "^/jp/where\\-to\\-buy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/jp/where\\-to\\-buy(?:/)?$"
+    },
+    {
       "page": "/product",
       "regex": "^/product(?:/)?$",
       "routeKeys": {},
