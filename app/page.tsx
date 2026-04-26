@@ -36,23 +36,18 @@ export default function Home() {
 
   return (
     <main>
-      {/* Hero Banner */}
-      <section className="relative min-h-screen overflow-hidden pt-24">
-        <div className="absolute inset-0 metal opacity-70" />
-        <div className="absolute inset-0 grain opacity-25" />
-        {/* Banner images */}
-        <div className="absolute inset-0">
-          {banners.map((b, i) => (
-            <img
-              key={i}
-              src={b.src}
-              alt={b.alt}
-              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-              style={{ opacity: i === current ? 1 : 0 }}
-            />
-          ))}
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
+      {/* Full-screen Banner */}
+      <section className="relative h-screen overflow-hidden">
+        {banners.map((b, i) => (
+          <img
+            key={i}
+            src={b.src}
+            alt={b.alt}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+            style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-black/30" />
         {/* Banner dots */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
           {banners.map((_, i) => (
@@ -63,26 +58,26 @@ export default function Home() {
             />
           ))}
         </div>
-        {/* Hero content */}
-        <div className="container-x relative grid min-h-[82vh] items-center gap-12 md:grid-cols-2">
-          <div>
-            <p className="eyebrow mb-5">Mechanical Coffee Instruments</p>
-            <h1 className="max-w-4xl text-5xl md:text-7xl font-semibold tracking-tight text-balance text-white">
-              Sou Sik<br />為手感而生的精密磨豆機。
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-white/78">
-              P-1 將行星齒輪、可替換刀盤與低殘粉結構整合在一支手搖磨豆機裡。不是單純把豆子磨碎，而是讓研磨變成一種可感受的機械節奏。
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link className="btn-primary" href="/product">探索 P-1</Link>
-              <Link className="btn-secondary" href="/technology">看技術解析</Link>
-            </div>
+      </section>
+
+      {/* Hero Text */}
+      <section className="section">
+        <div className="container-x">
+          <p className="eyebrow mb-5">Mechanical Coffee Instruments</p>
+          <h1 className="max-w-4xl text-4xl md:text-6xl font-semibold tracking-tight text-balance">
+            Sou Sik<br />為手感而生的精密磨豆機。
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-9 text-white/68">
+            P-1 將行星齒輪、可替換刀盤與低殘粉結構整合在一支手搖磨豆機裡。不是單純把豆子磨碎，而是讓研磨變成一種可感受的機械節奏。
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Link className="btn-primary" href="/product">探索 P-1</Link>
+            <Link className="btn-secondary" href="/technology">看技術解析</Link>
           </div>
-          <div />
         </div>
       </section>
 
-      <section className="section">
+      <section className="section bg-white/[.03]">
         <div className="container-x">
           <p className="eyebrow mb-4">Design Philosophy</p>
           <div className="grid gap-10 md:grid-cols-2">
@@ -96,7 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section bg-white/[.03]">
+      <section className="section">
         <div className="container-x">
           <p className="eyebrow mb-4">P-1 Highlights</p>
           <h2 className="mb-10 max-w-3xl text-3xl md:text-5xl font-semibold tracking-tight">
@@ -114,7 +109,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section bg-white/[.03]">
         <div className="container-x grid gap-8 md:grid-cols-2">
           <div>
             <img src="/images/grinder-detail.jpg" alt="SOU SIK P-1 研磨結構細節" className="rounded-[2rem] w-full object-cover shadow-2xl" />
@@ -132,7 +127,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section bg-white/[.03]">
+      <section className="section">
         <div className="container-x">
           <p className="eyebrow mb-4">Journal</p>
           <h2 className="mb-10 text-3xl md:text-5xl font-semibold tracking-tight">
