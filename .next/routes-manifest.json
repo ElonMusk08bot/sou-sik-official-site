@@ -60,6 +60,48 @@
       "namedRegex": "^/contact(?:/)?$"
     },
     {
+      "page": "/en",
+      "regex": "^/en(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/en(?:/)?$"
+    },
+    {
+      "page": "/en/about",
+      "regex": "^/en/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/en/about(?:/)?$"
+    },
+    {
+      "page": "/en/blog",
+      "regex": "^/en/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/en/blog(?:/)?$"
+    },
+    {
+      "page": "/en/contact",
+      "regex": "^/en/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/en/contact(?:/)?$"
+    },
+    {
+      "page": "/en/product",
+      "regex": "^/en/product(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/en/product(?:/)?$"
+    },
+    {
+      "page": "/en/technology",
+      "regex": "^/en/technology(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/en/technology(?:/)?$"
+    },
+    {
+      "page": "/en/where-to-buy",
+      "regex": "^/en/where\\-to\\-buy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/en/where\\-to\\-buy(?:/)?$"
+    },
+    {
       "page": "/product",
       "regex": "^/product(?:/)?$",
       "routeKeys": {},
