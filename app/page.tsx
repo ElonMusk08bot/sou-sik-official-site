@@ -11,6 +11,8 @@ const banners = [
   { src: '/images/hero-banner-5.jpg', alt: '精密齒輪結構' },
   { src: '/images/hero-banner-6.jpg', alt: '可替換刀盤系統' },
   { src: '/images/hero-banner-7.jpg', alt: '機械美學與咖啡的結合' },
+  { src: '/images/hero-banner-8.jpg', alt: 'EASYREPLACE BURRS 01 & 02 刀盤系統' },
+  { src: '/images/hero-banner-9.jpg', alt: '精密錐刀結構細節' },
 ]
 
 const features = [
