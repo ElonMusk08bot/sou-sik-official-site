@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <main>
       {/* Full-screen Banner */}
-      <section className="relative flex items-center justify-center bg-black overflow-hidden" style={{ height: 'calc(100vw * 1.333)' }}>
+      <section className="relative flex items-center justify-center bg-black overflow-hidden" style={{ height: 'calc(100vw * 1.333 + 4rem)', paddingTop: '4rem' }}>
         {banners.map((b, i) => (
           <img
             key={i}
