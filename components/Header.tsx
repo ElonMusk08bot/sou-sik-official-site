@@ -9,11 +9,9 @@ export default function Header() {
   const isEn = path.startsWith('/en')
   const isJp = path.startsWith('/jp')
   const nav = isEn ? navEn : isJp ? navJp : navTw
-  const langLabel = isEn ? 'JP' : isJp ? 'TW' : 'EN'
-  const langHref = isEn ? '/jp' : isJp ? '/' : '/en'
+  const logoHref = isEn ? '/en' : isJp ? '/jp' : '/'
   const buyHref = isEn ? '/en/where-to-buy' : isJp ? '/jp/where-to-buy' : '/where-to-buy'
   const buyLabel = isEn ? 'Buy Now' : isJp ? '購入' : '立即購買'
-  const logoHref = isEn ? '/en' : isJp ? '/jp' : '/'
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-carbon/80 backdrop-blur-xl">
@@ -24,10 +22,10 @@ export default function Header() {
             <Link key={h} href={h} className="hover:text-white">{n}</Link>
           ))}
         </nav>
-        <div className="flex items-center gap-3">
-          <Link href={langHref} className="rounded-full border border-white/20 px-3 py-1 text-xs hover:bg-white hover:text-black">
-            {langLabel}
-          </Link>
+        <div className="flex items-center gap-2">
+          <Link href="/jp" className="rounded-full border border-white/20 px-3 py-1 text-xs hover:bg-white hover:text-black">JP</Link>
+          <Link href="/en" className="rounded-full border border-white/20 px-3 py-1 text-xs hover:bg-white hover:text-black">EN</Link>
+          <Link href="/" className="rounded-full border border-white/20 px-3 py-1 text-xs hover:bg-white hover:text-black">TW</Link>
           <Link href={buyHref} className="rounded-full border border-white/20 px-4 py-2 text-xs hover:bg-white hover:text-black">
             {buyLabel}
           </Link>
