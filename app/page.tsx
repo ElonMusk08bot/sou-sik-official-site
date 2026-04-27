@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import CTA from '@/components/CTA'
 
@@ -15,29 +15,59 @@ const banners = [
   { src: '/images/hero-banner-9.jpg', alt: '精密錐刀結構細節' },
 ]
 
-// Desktop: first slide is video, rest are images
+// Desktop: first slide is video (20s), then new images
 const desktopBanners = [
   { src: '/images/hero-banner-video.mp4', alt: 'SOU SIK P-1', isVideo: true },
-  { src: '/images/hero-banner-2.jpg', alt: 'SOU SIK x LEBREW 合作款' },
-  { src: '/images/hero-banner-3.jpg', alt: 'Smoothcrank Easy Replace Burrs' },
-  { src: '/images/hero-banner-4.jpg', alt: 'SOU SIK P-1 研磨系統' },
-  { src: '/images/hero-banner-5.jpg', alt: '精密齒輪結構' },
-  { src: '/images/hero-banner-6.jpg', alt: '可替換刀盤系統' },
-  { src: '/images/hero-banner-7.jpg', alt: '機械美學與咖啡的結合' },
-  { src: '/images/hero-banner-8.jpg', alt: 'EASYREPLACE BURRS 01 & 02 刀盤系統' },
-  { src: '/images/hero-banner-9.jpg', alt: '精密錐刀結構細節' },
+  { src: '/images/hero-banner-2.jpg', alt: 'SOU SIK P-1 齒輪結構' },
+  { src: '/images/hero-banner-3.jpg', alt: 'EASYREPLACE HYPER BURRS 001 & 002' },
+  { src: '/images/hero-banner-4.jpg', alt: 'SOUL SIK x LEBREW 聯名刀盤' },
+  { src: '/images/hero-banner-5.jpg', alt: 'SOU SIK x LEBREW 研磨系統' },
 ]
 
 // Desktop: landscape banner fills full viewport width (16:9)
 // Mobile: portrait banner (portrait user's images, 1080x1389)
 function HeroBanner() {
   const [current, setCurrent] = useState(0)
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const clearTimer = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current)
+      timerRef.current = null
+    }
+  }
+
+  const startTimer = () => {
+    clearTimer()
+    timerRef.current = setTimeout(() => {
+      setCurrent(prev => (prev + 1) % desktopBanners.length)
+    }, isVideoPlaying ? 20000 : 4000)
+  }
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent(prev => (prev + 1) % banners.length)
+    // When video slide becomes active
+    if (desktopBanners[current]?.isVideo) {
+      setIsVideoPlaying(true)
+      startTimer() // 20s timer for video
+    } else {
+      setIsVideoPlaying(false)
+      startTimer() // 4s timer for images
+    }
+    return () => clearTimer()
+  }, [current])
+
+  // Mobile uses a separate 4s interval
+  const [mobileCurrent, setMobileCurrent] = useState(0)
+  const mobileTimerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  useEffect(() => {
+    mobileTimerRef.current = setInterval(() => {
+      setMobileCurrent(prev => (prev + 1) % banners.length)
     }, 4000)
-    return () => clearInterval(timer)
+    return () => {
+      if (mobileTimerRef.current) clearInterval(mobileTimerRef.current)
+    }
   }, [])
 
   return (
@@ -51,7 +81,7 @@ function HeroBanner() {
             src={b.src}
             alt={b.alt}
             className="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000"
-            style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
+            style={{ opacity: i === mobileCurrent ? 1 : 0, zIndex: i === mobileCurrent ? 1 : 0 }}
           />
         ))}
         {/* Gradient overlay for text readability */}
@@ -61,8 +91,8 @@ function HeroBanner() {
           {banners.map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrent(i)}
-              className={`w-2 h-2 rounded-full transition-all ${i === current ? 'bg-white w-5' : 'bg-white/40'}`}
+              onClick={() => setMobileCurrent(i)}
+              className={`w-2 h-2 rounded-full transition-all ${i === mobileCurrent ? 'bg-white w-5' : 'bg-white/40'}`}
             />
           ))}
         </div>
