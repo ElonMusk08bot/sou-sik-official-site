@@ -92,24 +92,8 @@ function HeroBanner() {
             />
           )
         ))}
-        {/* Dark overlay so text sits clearly on top */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
-        {/* Text overlay */}
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-8">
-          <p className="eyebrow mb-4 text-white/70">Mechanical Coffee Instruments</p>
-          <h1 className="max-w-4xl text-4xl lg:text-6xl font-semibold tracking-tight text-white leading-tight">
-            Sou Sik<br />為手感而生的精密磨豆機。
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80">
-            P-1 將行星齒輪、可替換刀盤與低殘粉結構整合在一支手搖磨豆機裡。
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Link className="btn-primary" href="/product">探索 P-1</Link>
-            <Link className="rounded-full border border-white/40 px-6 py-2.5 text-sm text-white hover:bg-white hover:text-black transition-colors" href="/technology">看技術解析</Link>
-          </div>
-        </div>
         {/* Dots */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
           {desktopBanners.map((_, i) => (
             <button
               key={i}
@@ -139,11 +123,28 @@ export default function Home() {
     <main>
       <HeroBanner />
 
-      {/* Mobile hero text (desktop text is already in HeroBanner) */}
+      {/* Mobile hero text */}
       <section className="section md:hidden">
         <div className="container-x">
           <p className="eyebrow mb-5">Mechanical Coffee Instruments</p>
           <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-balance">
+            Sou Sik<br />為手感而生的精密磨豆機。
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-9 text-white/68">
+            P-1 將行星齒輪、可替換刀盤與低殘粉結構整合在一支手搖磨豆機裡。不是單純把豆子磨碎，而是讓研磨變成一種可感受的機械節奏。
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Link className="btn-primary" href="/product">探索 P-1</Link>
+            <Link className="btn-secondary" href="/technology">看技術解析</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Desktop hero text (below banner, shown from md upward) */}
+      <section className="hidden md:block section">
+        <div className="container-x">
+          <p className="eyebrow mb-5">Mechanical Coffee Instruments</p>
+          <h1 className="max-w-4xl text-4xl lg:text-6xl font-semibold tracking-tight text-balance">
             Sou Sik<br />為手感而生的精密磨豆機。
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-9 text-white/68">
