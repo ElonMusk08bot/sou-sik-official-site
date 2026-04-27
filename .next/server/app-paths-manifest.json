@@ -21,6 +21,8 @@
   "/jp/where-to-buy/page": "app/jp/where-to-buy/page.js",
   "/page": "app/page.js",
   "/product/page": "app/product/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/technology/page": "app/technology/page.js",
   "/where-to-buy/page": "app/where-to-buy/page.js"
 }
