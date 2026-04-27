@@ -15,6 +15,88 @@ const banners = [
   { src: '/images/hero-banner-9.jpg', alt: '精密錐刀結構細節' },
 ]
 
+// Desktop: landscape banner fills full viewport width (16:9)
+// Mobile: portrait banner (portrait user's images, 1080x1389)
+function HeroBanner() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev + 1) % banners.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [])
+
+  return (
+    <>
+      {/* ── Mobile: portrait banner (shown below md) ── */}
+      <section className="relative flex items-center justify-center bg-black overflow-hidden md:hidden"
+        style={{ height: 'calc(100vw * 1.286)', maxHeight: '85vh' }}>
+        {banners.map((b, i) => (
+          <img
+            key={i}
+            src={b.src}
+            alt={b.alt}
+            className="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000"
+            style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
+          />
+        ))}
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
+        {/* Dots */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+          {banners.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2 h-2 rounded-full transition-all ${i === current ? 'bg-white w-5' : 'bg-white/40'}`}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* ── Desktop: landscape banner (shown from md upward) ── */}
+      <section className="relative hidden md:block bg-black overflow-hidden" style={{ height: '56.25vw', maxHeight: '75vh' }}>
+        {banners.map((b, i) => (
+          <img
+            key={i}
+            src={b.src}
+            alt={b.alt}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+            style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
+          />
+        ))}
+        {/* Dark overlay so text sits clearly on top */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
+        {/* Text overlay */}
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-8">
+          <p className="eyebrow mb-4 text-white/70">Mechanical Coffee Instruments</p>
+          <h1 className="max-w-4xl text-4xl lg:text-6xl font-semibold tracking-tight text-white leading-tight">
+            Sou Sik<br />為手感而生的精密磨豆機。
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80">
+            P-1 將行星齒輪、可替換刀盤與低殘粉結構整合在一支手搖磨豆機裡。
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <Link className="btn-primary" href="/product">探索 P-1</Link>
+            <Link className="rounded-full border border-white/40 px-6 py-2.5 text-sm text-white hover:bg-white hover:text-black transition-colors" href="/technology">看技術解析</Link>
+          </div>
+        </div>
+        {/* Dots */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+          {banners.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2 h-2 rounded-full transition-all ${i === current ? 'bg-white w-6' : 'bg-white/40'}`}
+            />
+          ))}
+        </div>
+      </section>
+    </>
+  )
+}
+
 const features = [
   ['Planetary Gear', '行星齒輪減力系統，放大力矩，降低手腕負擔，讓淺焙豆研磨更順。'],
   ['53mm Burr System', '大尺寸錐刀結構，兼顧效率與粉徑穩定，適合手沖與義式探索。'],
@@ -27,45 +109,15 @@ const articles = [
 ]
 
 export default function Home() {
-  const [current, setCurrent] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent(prev => (prev + 1) % banners.length)
-    }, 4000)
-    return () => clearInterval(timer)
-  }, [])
-
   return (
     <main>
-      {/* Full-screen Banner */}
-      <section className="relative flex items-center justify-center bg-black overflow-hidden" style={{ height: 'calc(100vw * 1.333 + 4rem)', paddingTop: '4rem' }}>
-        {banners.map((b, i) => (
-          <img
-            key={i}
-            src={b.src}
-            alt={b.alt}
-            className="absolute transition-opacity duration-1000"
-            style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0, maxHeight: '100vh', maxWidth: '100vw', objectFit: 'contain' }}
-          />
-        ))}
-        {/* Banner dots */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-          {banners.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`w-2 h-2 rounded-full transition-all ${i === current ? 'bg-white w-6' : 'bg-white/40'}`}
-            />
-          ))}
-        </div>
-      </section>
+      <HeroBanner />
 
-      {/* Hero Text */}
-      <section className="section">
+      {/* Mobile hero text (desktop text is already in HeroBanner) */}
+      <section className="section md:hidden">
         <div className="container-x">
           <p className="eyebrow mb-5">Mechanical Coffee Instruments</p>
-          <h1 className="max-w-4xl text-4xl md:text-6xl font-semibold tracking-tight text-balance">
+          <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-balance">
             Sou Sik<br />為手感而生的精密磨豆機。
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-9 text-white/68">
