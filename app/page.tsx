@@ -15,6 +15,19 @@ const banners = [
   { src: '/images/hero-banner-9.jpg', alt: '精密錐刀結構細節' },
 ]
 
+// Desktop: first slide is video, rest are images
+const desktopBanners = [
+  { src: '/images/hero-banner-video.mp4', alt: 'SOU SIK P-1', isVideo: true },
+  { src: '/images/hero-banner-2.jpg', alt: 'SOU SIK x LEBREW 合作款' },
+  { src: '/images/hero-banner-3.jpg', alt: 'Smoothcrank Easy Replace Burrs' },
+  { src: '/images/hero-banner-4.jpg', alt: 'SOU SIK P-1 研磨系統' },
+  { src: '/images/hero-banner-5.jpg', alt: '精密齒輪結構' },
+  { src: '/images/hero-banner-6.jpg', alt: '可替換刀盤系統' },
+  { src: '/images/hero-banner-7.jpg', alt: '機械美學與咖啡的結合' },
+  { src: '/images/hero-banner-8.jpg', alt: 'EASYREPLACE BURRS 01 & 02 刀盤系統' },
+  { src: '/images/hero-banner-9.jpg', alt: '精密錐刀結構細節' },
+]
+
 // Desktop: landscape banner fills full viewport width (16:9)
 // Mobile: portrait banner (portrait user's images, 1080x1389)
 function HeroBanner() {
@@ -57,14 +70,27 @@ function HeroBanner() {
 
       {/* ── Desktop: landscape banner (shown from md upward) ── */}
       <section className="relative hidden md:block bg-black overflow-hidden" style={{ height: '56.25vw', maxHeight: '75vh' }}>
-        {banners.map((b, i) => (
-          <img
-            key={i}
-            src={b.src}
-            alt={b.alt}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-            style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
-          />
+        {desktopBanners.map((b, i) => (
+          b.isVideo ? (
+            <video
+              key={i}
+              src={b.src}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+              style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
+            />
+          ) : (
+            <img
+              key={i}
+              src={b.src}
+              alt={b.alt}
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+              style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
+            />
+          )
         ))}
         {/* Dark overlay so text sits clearly on top */}
         <div className="absolute inset-0 bg-black/40 z-10" />
@@ -84,7 +110,7 @@ function HeroBanner() {
         </div>
         {/* Dots */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-30">
-          {banners.map((_, i) => (
+          {desktopBanners.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
