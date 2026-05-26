@@ -104,7 +104,7 @@ self.__SERVER_FILES_MANIFEST={
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/private/tmp/sou-sik-site",
+    "outputFileTracingRoot": "/private/tmp/sou-sik-official-site",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -305,11 +305,11 @@ self.__SERVER_FILES_MANIFEST={
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.js",
     "turbopack": {
-      "root": "/private/tmp/sou-sik-site"
+      "root": "/private/tmp/sou-sik-official-site"
     },
     "distDirRoot": ".next"
   },
-  "appDir": "/private/tmp/sou-sik-site",
+  "appDir": "/private/tmp/sou-sik-official-site",
   "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",
