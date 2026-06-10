@@ -13,7 +13,7 @@ export default function Header() {
   const isJp = path.startsWith('/jp')
   const nav = isEn ? navEn : isJp ? navJp : navTw
   const logoHref = isEn ? '/en' : isJp ? '/jp' : '/'
-  const buyHref = 'https://www.matrix.com.tw/products/sou-sik-p-1%E6%89%8B%E6%90%96%E5%92%96%E5%95%A1%E7%A3%A8%E8%B1%86%E6%A9%9F'
+  const buyHref = 'https://www.matrix.com.tw/products/sou-sik-p-1%E6%89%8B%E6%90%96%E5%92%96%E5%95%A1%E7%A3%A8%E8%B1%86%E6%A9%9F?utm_source=sou-sik-website&utm_medium=header&utm_campaign=p1-launch'
   const buyLabel = isEn ? 'Buy Now' : isJp ? '購入' : '立即購買'
 
   return (
