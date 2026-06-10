@@ -1,0 +1,14 @@
+{
+  "name": "Sou Sik｜Mechanical Coffee Instruments",
+  "short_name": "Sou Sik",
+  "description": "P-1 行星齒輪手搖磨豆機，為淺焙與日常沖煮帶來更穩定、更省力的研磨體驗。",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
