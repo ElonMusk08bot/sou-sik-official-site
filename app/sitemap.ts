@@ -1,69 +1,44 @@
 import { MetadataRoute } from 'next'
+import { posts } from '../lib/posts'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://sousikgrinder.com'
   const today = new Date().toISOString().split('T')[0]
+  const locales = ['', '/en', '/jp'] as const
+  const staticPaths = ['', '/product', '/technology', '/about', '/where-to-buy', '/blog', '/contact']
 
-  const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
+  // Static pages × 3 locales
+  const staticPages: MetadataRoute.Sitemap = locales.flatMap((loc) =>
+    staticPaths.map((path) => {
+      const isHome = path === ''
+      return {
+        url: `${baseUrl}${loc}${path}`,
+        lastModified: today,
+        changeFrequency: (isHome || path === '/product' || path === '/where-to-buy' || path === '/blog'
+          ? 'weekly'
+          : 'monthly') as 'weekly' | 'monthly',
+        priority: isHome
+          ? 1.0
+          : path === '/product' || path === '/blog'
+          ? 0.9
+          : path === '/where-to-buy' || path === '/technology'
+          ? 0.8
+          : path === '/about'
+          ? 0.6
+          : 0.5,
+      }
+    })
+  )
+
+  // Blog posts × 3 locales — single source of truth: lib/posts.ts
+  const blogPages: MetadataRoute.Sitemap = locales.flatMap((loc) =>
+    posts.map((post) => ({
+      url: `${baseUrl}${loc}/blog/${post.slug}`,
       lastModified: today,
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/product`,
-      lastModified: today,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/technology`,
-      lastModified: today,
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: today,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/where-to-buy`,
-      lastModified: today,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: today,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: today,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-  ]
-
-  const blogPosts = [
-    { slug: 'how-to-tell-if-hand-grinder-suits-light-roast', priority: 0.8 },
-    { slug: 'are-planetary-gear-grinders-gimmick', priority: 0.8 },
-    { slug: 'why-low-retention-affects-flavor', priority: 0.8 },
-    { slug: 'how-often-clean-hand-grinder', priority: 0.8 },
-    { slug: 'do-pour-over-and-espresso-need-same-burr', priority: 0.8 },
-    { slug: 'how-to-build-your-own-grind-size-chart', priority: 0.8 },
-  ]
-
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map(post => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: today,
-    changeFrequency: 'monthly' as const,
-    priority: post.priority,
-  }))
+    }))
+  )
 
   return [...staticPages, ...blogPages]
 }
