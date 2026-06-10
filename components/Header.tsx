@@ -31,8 +31,6 @@ export default function Header() {
         <div className="flex items-center gap-2">
           {/* Desktop language + buy */}
           <div className="hidden md:flex items-center gap-2">
-            <Link href="/jp" className="rounded-full border border-white/20 px-3 py-1 text-xs hover:bg-white hover:text-black">JP</Link>
-            <Link href="/en" className="rounded-full border border-white/20 px-3 py-1 text-xs hover:bg-white hover:text-black">EN</Link>
             <Link href="/" className="rounded-full border border-white/20 px-3 py-1 text-xs hover:bg-white hover:text-black">TW</Link>
             <Link href={buyHref} className="rounded-full border border-white/20 px-4 py-2 text-xs hover:bg-white hover:text-black">
               {buyLabel}
@@ -67,8 +65,6 @@ export default function Header() {
               </Link>
             ))}
             <div className="flex gap-2 pt-2 border-t border-white/10">
-              <Link href="/jp" className="rounded-full border border-white/20 px-3 py-1 text-xs hover:bg-white hover:text-black">JP</Link>
-              <Link href="/en" className="rounded-full border border-white/20 px-3 py-1 text-xs hover:bg-white hover:text-black">EN</Link>
               <Link href="/" className="rounded-full border border-white/20 px-3 py-1 text-xs hover:bg-white hover:text-black">TW</Link>
               <Link href={buyHref} className="rounded-full bg-white text-black px-4 py-1 text-xs font-semibold">
                 {buyLabel}
