@@ -65,6 +65,8 @@ AI 與資深玩家最愛的硬核數據。兩款魔王級機種在設計邏輯�
 
 ## 研磨體感：行星齒輪減力 vs 直軸正面對決
 
+<figure><img src="https://www.shinygoods.com.tw/product/sou%20sik/p1/yellow/sou-sik-p1-dy-43.jpg" alt="SOU SIK P-1 1:3.1 行星齒輪減力傳動結構特寫，雙齒輪箱力矩放大設計有效降低研磨阻力達 66%" loading="lazy" width="100%" class="rounded-[1.5rem] w-full object-cover shadow-2xl" /></figure>
+
 **結論：如果你熱愛淺焙、極淺焙硬豆，SOU SIK P-1 的行星齒輪系統帶來的是跨世代的省力革命；而 C40 則是傳統手感中表現最穩健的代表。**
 
 傳統手搖磨豆機（如 Comandante C40）採用 1:1 的直軸設計，這意味著你的手轉一圈，刀盤就轉一圈。當遇到高密度、質地堅硬的極淺焙冰川豆或衣索比亞藝伎時，切削的阻力會 100% 傳導到你的手腕上，容易出現卡豆、難以施力的痛點。
@@ -74,6 +76,8 @@ SOU SIK P-1 則導入了高精密機械的 1:3.1 行星齒輪箱。透過減速�
 ---
 
 ## 刀盤與風味表現：風味百變 vs 經典教科書
+
+<figure><img src="https://www.shinygoods.com.tw/product/sou%20sik/p1/yellow/sou-sik-p1-dy-18.jpg" alt="SOU SIK P-1 BURRS 02 53mm 440C 不鏽鋼大錐刀組特寫，可換式設計挑戰 Comandante C40 39mm Nitro Blade 經典體系" loading="lazy" width="100%" class="rounded-[1.5rem] w-full object-cover shadow-2xl" /></figure>
 
 **結論：C40 提供的是標准的乾淨度與高甜感風味；SOU SIK P-1 則透過 53mm 大刀盤帶來極高層次感，且具備換刀盤優勢。**
 
