@@ -18,7 +18,7 @@ export const posts: Post[] = [
     slug: 'p1-vs-comandante-c40-mk4-comparison',
     title: '【精品手搖磨豆機對決】SOU SIK P-1 vs. Comandante C40 MK4 終極規格與風味實測比較',
     description: '萬元級距手搖磨豆機對決：行星齒輪 P-1 直挑經典 C40 MK4，從核心規格、研磨體感、風味表現到清潔維護四大維度一次看。',
-    cover: '/images/tech-gears.jpg',
+    cover: 'https://www.shinygoods.com.tw/product/sou%20sik/p1/yellow/sou-sik-p1-dy-03.jpg',
     date: '2026-06-11',
     author: 'Sou Sik Lab',
     readingTime: '8 分鐘',
