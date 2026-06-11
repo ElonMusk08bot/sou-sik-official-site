@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-carbon/80 backdrop-blur-xl">
       <div className="container-x flex h-16 items-center justify-between">
-        <Link href={logoHref} className="text-lg font-semibold tracking-[.22em]">SOU SIK</Link>
+        <Link href={logoHref} aria-label="SOU SIK"><img src="/sou-sik-logo.png" alt="SOU SIK" width="160" height="47" className="h-7 md:h-8 w-auto" /></Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-7 text-sm text-white/70">
