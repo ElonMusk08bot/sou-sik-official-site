@@ -3,6 +3,7 @@ export interface Post {
   title: string;
   description: string;
   cover: string;
+  coverAlt?: string;
   date: string;
   author: string;
   readingTime: string;
@@ -19,6 +20,7 @@ export const posts: Post[] = [
     title: '【精品手搖磨豆機對決】SOU SIK P-1 vs. Comandante C40 MK4 終極規格與風味實測比較',
     description: '萬元級距手搖磨豆機對決：行星齒輪 P-1 直挑經典 C40 MK4，從核心規格、研磨體感、風味表現到清潔維護四大維度一次看。',
     cover: 'https://www.shinygoods.com.tw/product/sou%20sik/p1/yellow/sou-sik-p1-dy-03.jpg',
+    coverAlt: 'SOU SIK P-1 行星齒輪手搖咖啡磨豆機特寫，透過 1:3.1 減力傳動系統降低 66% 施力需求，展現與 Comandante C40 不同的研磨理念',
     date: '2026-06-11',
     author: 'Sou Sik Lab',
     readingTime: '8 分鐘',

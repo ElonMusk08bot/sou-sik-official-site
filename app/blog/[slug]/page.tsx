@@ -38,7 +38,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       {/* Cover */}
       <section className="relative w-full overflow-hidden" style={{ height: '60vh', minHeight: '400px' }}>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-carbon" />
-        <img src={post.cover} alt={post.title} className="w-full h-full object-cover opacity-70" />
+        <img src={post.cover} alt={post.coverAlt || post.title} className="w-full h-full object-cover opacity-70" />
         <div className="absolute inset-0 flex items-end">
           <div className="container-x pb-12">
             <p className="eyebrow mb-4">{post.date} · {post.readingTime}</p>
