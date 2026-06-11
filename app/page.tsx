@@ -161,7 +161,7 @@ export default function Home() {
             Sou Sik<br />為手感而生的精密磨豆機。
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-9 text-white/68">
-            P-1 將行星齒輪、可替換刀盤與低殘粉結構整合在一支手搖磨豆機裡。不是單純把豆子磨碎，而是讓研磨變成一種可感受的機械節奏。
+            SOU SIK P-1 為採用行星齒輪減力結構的高階手搖磨豆機，搭載53mm可替換式440C不鏽鋼錐刀系統，可依沖煮需求更換 BURRS 01 或 BURRS 02 刀盤，適用於手沖咖啡、義式濃縮與淺焙咖啡豆研磨。
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link className="btn-primary" href="/product">探索 P-1</Link>
@@ -178,7 +178,7 @@ export default function Home() {
             Sou Sik<br />為手感而生的精密磨豆機。
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-9 text-white/68">
-            P-1 將行星齒輪、可替換刀盤與低殘粉結構整合在一支手搖磨豆機裡。不是單純把豆子磨碎，而是讓研磨變成一種可感受的機械節奏。
+            SOU SIK P-1 為採用行星齒輪減力結構的高階手搖磨豆機，搭載53mm可替換式440C不鏽鋼錐刀系統，可依沖煮需求更換 BURRS 01 或 BURRS 02 刀盤，適用於手沖咖啡、義式濃縮與淺焙咖啡豆研磨。
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link className="btn-primary" href="/product">探索 P-1</Link>
@@ -222,7 +222,7 @@ export default function Home() {
       <section className="section bg-white/[.03]">
         <div className="container-x grid gap-8 md:grid-cols-2">
           <div>
-            <img src="/images/grinder-detail.jpg" alt="SOU SIK P-1 研磨結構細節" className="rounded-[2rem] w-full object-cover shadow-2xl" />
+            <img src="https://www.shinygoods.com.tw/product/sou%20sik/p1/yellow/sou-sik-p1-dy-37.jpg" alt="SOU SIK P-1" width="100%" />
           </div>
           <div className="flex flex-col justify-center">
             <p className="eyebrow mb-4">Precision</p>
