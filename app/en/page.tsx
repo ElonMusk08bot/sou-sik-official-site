@@ -72,7 +72,7 @@ export default function Home() {
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link className="btn-primary" href="/en/product">Explore P-1</Link>
-            <Link className="btn-secondary" href="/en/technology">Technology</Link>
+            
           </div>
         </div>
       </section>

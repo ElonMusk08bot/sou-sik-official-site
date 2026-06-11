@@ -65,7 +65,7 @@ export default function Home() {
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link className="btn-primary" href="/jp/product">P-1を見る</Link>
-            <Link className="btn-secondary" href="/jp/technology">技術解説</Link>
+            
           </div>
         </div>
       </section>

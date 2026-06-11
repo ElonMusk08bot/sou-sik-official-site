@@ -165,7 +165,7 @@ export default function Home() {
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link className="btn-primary" href="/product">探索 P-1</Link>
-            <Link className="btn-secondary" href="/technology">看技術解析</Link>
+            
           </div>
         </div>
       </section>
@@ -182,7 +182,6 @@ export default function Home() {
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link className="btn-primary" href="/product">探索 P-1</Link>
-            <Link className="btn-secondary" href="/technology">看技術解析</Link>
           </div>
         </div>
       </section>
