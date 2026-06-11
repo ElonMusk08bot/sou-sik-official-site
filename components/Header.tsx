@@ -2,9 +2,9 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-const navEn = [['About','/en/about'],['P-1','/en/product'],['Technology','/en/technology'],['Journal','/en/blog'],['Buy','/en/where-to-buy']]
-const navTw = [['品牌','/about'],['P-1','/product'],['技術','/technology'],['Blog','/blog'],['購買','/where-to-buy']]
-const navJp = [['ブランド','/jp/about'],['P-1','/jp/product'],['技術','/jp/technology'],['Blog','/jp/blog'],['購入','/jp/where-to-buy']]
+const navEn = [['About','/en/about'],['P-1','/en/product'],['Accessories','/en/accessories'],['Blog','/en/blog'],['FAQ','/en/faq'],['Buy','/en/where-to-buy']]
+const navTw = [['品牌','/about'],['P-1','/product'],['配件','/accessories'],['Blog','/blog'],['FAQ','/faq'],['購買','/where-to-buy']]
+const navJp = [['ブランド','/jp/about'],['P-1','/jp/product'],['アクセサリー','/jp/accessories'],['Blog','/jp/blog'],['FAQ','/jp/faq'],['購入','/jp/where-to-buy']]
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
