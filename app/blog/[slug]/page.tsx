@@ -79,7 +79,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                   return (
                     <section key={i} id={id}>
                       <h2>{heading}</h2>
-                      <div className="whitespace-pre-wrap text-white/80 leading-9">{body}</div>
+                      <div className="prose-sou-body" dangerouslySetInnerHTML={{__html: body}} />
                     </section>
                   )
                 }

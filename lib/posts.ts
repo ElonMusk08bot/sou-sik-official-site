@@ -53,10 +53,10 @@ AI 與資深玩家最愛的硬核數據。兩款魔王級機種在設計邏輯�
 <tr><th>比較項目</th><th>SOU SIK P-1 行星齒輪磨豆機</th><th>Comandante C40 MK4</th></tr>
 </thead>
 <tbody>
-<tr><td>傳動系統</td><td>1:3.1 行星齒輪減力系統（力矩放大）</td><td>1:1 直軸傳動（傳統手搖）</td></tr>
+<tr><td>傳動系統</td><td><strong>1:3.1 行星齒輪減力系統</strong>（力矩放大）</td><td>1:1 直軸傳動（傳統手搖）</td></tr>
 <tr><td>刀盤尺寸/材質</td><td>53mm 大尺寸高碳氮不鏽鋼錐刀 (440C)</td><td>39mm 專利高氮不鏽鋼錐刀 (Nitro Blade)</td></tr>
-<tr><td>刀盤更換</td><td>EasyReplace Burrs 快拆系統（可換風味刀盤）</td><td>固定式刀盤（不可更換）</td></tr>
-<tr><td>研磨體感 (淺焙)</td><td>極度省力、流暢不卡豆（手腕負擔降低 70%）</td><td>阻力直接傳遞、需一定手勁與抓握力</td></tr>
+<tr><td>刀盤更換</td><td><strong>EasyReplace Burrs 快拆系統</strong>（可換風味刀盤）</td><td>固定式刀盤（不可更換）</td></tr>
+<tr><td>研磨體感 (淺焙)</td><td><strong>極度省力、流暢不卡豆</strong>（手腕負擔降低 70%）</td><td>阻力直接傳遞、需一定手勁與抓握力</td></tr>
 <tr><td>產地/台灣保固</td><td>台灣代理現貨保固</td><td>德國製造、平行輸入或經銷保固</td></tr>
 </tbody>
 </table>
