@@ -34,23 +34,33 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     .filter(Boolean) as typeof posts
 
   return (
-    <main className="pt-24">
-      {/* Cover */}
-      <section className="relative w-full overflow-hidden" style={{ height: '60vh', minHeight: '400px' }}>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-carbon" />
-        <img src={post.cover} alt={post.coverAlt || post.title} className="w-full h-full object-cover opacity-70" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="container-x pb-12">
-            <p className="eyebrow mb-4">{post.date} · {post.readingTime}</p>
-            <h1 className="text-4xl md:text-6xl font-semibold tracking-tight max-w-4xl">{post.title}</h1>
-          </div>
+    <main className="min-w-0 overflow-x-clip pt-16">
+      {/* Article title and cover are intentionally separated. Some cover assets
+          contain editorial typography, so overlaying the H1 would create a
+          double-text accessibility and readability failure. */}
+      <section className="border-b border-white/10 bg-carbon">
+        <div className="container-x min-w-0 py-16 md:py-24">
+          <p className="mb-5 text-sm font-medium tracking-[.16em] text-brass">{post.date} · {post.readingTime}</p>
+          <h1 className="max-w-5xl text-3xl font-semibold leading-[1.22] tracking-tight text-pretty sm:text-4xl md:text-6xl md:leading-[1.15]">{post.title}</h1>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10 bg-black">
+        <div className="container-x min-w-0 py-6 md:py-10">
+          <figure className="mx-auto w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-black md:rounded-[2rem]">
+            <img
+              src={post.cover}
+              alt={post.coverAlt || post.title}
+              className="mx-auto block h-auto max-h-[min(72vh,760px)] w-full max-w-full object-contain"
+            />
+          </figure>
         </div>
       </section>
 
       <div className="section">
-        <div className="container-x grid gap-12 md:grid-cols-[1fr_280px]">
+        <div className="container-x grid min-w-0 gap-12 md:grid-cols-[minmax(0,1fr)_280px]">
           {/* Main Content */}
-          <article>
+          <article className="min-w-0">
             <p className="text-lg text-white/65 leading-9 mb-10 border-l-2 border-brass pl-6">
               {post.description}
             </p>
